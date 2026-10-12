@@ -207,17 +207,17 @@ const COMMANDS = {
 <div class="term-white font-bold">🛠️ TECHNOLOGY MATRIX (lmduy2612):</div>
   • <span class="term-cyan">AI & Agents:</span> Autonomous Multi-Agent, Tool Calling & ReAct Loops, Vector RAG, AST Parsing
   • <span class="term-indigo">Backend:</span>    TypeScript, NestJS, gRPC & Protocol Buffers, Python 3.12, FastAPI
-  • <span class="term-yellow">Databases:</span>  PostgreSQL, Redis (Distributed Lock/Cache), Prisma ORM, MongoDB
-  • <span class="term-green">Frontend:</span>   React 19, Next.js 15, Three.js (WebGL), Tailwind CSS v4
-  • <span class="term-gray">DevOps:</span>     Docker, GitHub Actions CI/CD, Pytest, Cypress E2E
+  • <span class="term-yellow">Databases:</span>  PostgreSQL, Redis (Distributed Lock/Cache), Prisma ORM
+  • <span class="term-green">Web & UI:</span>   React 19, Next.js 15 (App Router), Tailwind CSS v4
+  • <span class="term-gray">Testing & CI:</span> Pytest, Vitest, Playwright E2E, GitHub Actions CI/CD
 `,
 
   repos: () => `
-<div class="term-white font-bold">📦 FEATURED REPOSITORIES (GitHub @lmduy2612):</div>
-  1. <span class="term-cyan">git-mechanic-agent</span> : Autonomous multi-agent MMO & bounty solver engine
-  2. <span class="term-indigo">nestjs-grpc</span>       : High-throughput distributed microservices with Protocol Buffers
-  3. <span class="term-green">threejs</span>           : Interactive 3D graphics and real-time WebGL rendering
-  4. <span class="term-yellow">cypress-e2e</span>       : Enterprise-grade automated end-to-end testing suite
+<div class="term-white font-bold">📦 FEATURED PLATFORMS & REPOSITORIES (GitHub @lmduy2612):</div>
+  1. <span class="term-cyan">job-harvester-agent</span> : Autonomous AI opportunity intelligence platform (118+ PRs)
+  2. <span class="term-indigo">git-mechanic-agent</span>  : Autonomous brownfield bug resolver & self-healing TDD engine
+  3. <span class="term-green">core-orchestrator</span>   : Unified multi-agent runtime & task state machine
+  4. <span class="term-yellow">lmduy2612.github.io</span> : Personal portfolio & interactive systems playground
 `,
 
   contact: () => `
