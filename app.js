@@ -10,7 +10,7 @@
 // 1. DYNAMIC TYPED ROLES
 const roles = [
   "Autonomous Multi-Agent Systems",
-  "1M+ Context LLM Reasoning (Gemini 3.8 Flash)",
+  "Deterministic Tool Calling & ReAct Loops",
   "High-Throughput gRPC & NestJS Services",
   "Test-Driven Development (TDD) Loops",
   "Distributed Backend Architecture",
@@ -174,7 +174,7 @@ const COMMANDS = {
   status: () => `
 <div class="term-white font-bold">👑 [MAIN CONTROL ORCHESTRATOR] Cluster Status:</div>
   🟢 <span class="term-indigo">[00-Docs-Governance]</span> => Online (Architecture sync & rules audit)
-  🟢 <span class="term-indigo">[01-Ideation-Research]</span> => Online (9router Gemini Pro 1M reasoning)
+  🟢 <span class="term-indigo">[01-Ideation-Research]</span> => Online (Autonomous LLM Tool Orchestration)
   🟢 <span class="term-indigo">[02-Bounty-Executor]</span>   => Online (Local TDD runner & pytest engine)
   🟢 <span class="term-indigo">[03-PnL-Finance]</span>       => Online (PR payout & milestone reconciliation)
   🟢 <span class="term-indigo">[04-Profile-Branding]</span>   => Online (Portfolio & GitHub profile architect)
@@ -194,7 +194,7 @@ const COMMANDS = {
 <div class="term-indigo font-bold">⚙️ [TDD SOLVER] Simulating Autonomous Feedback Loop...</div>
   1. Cloned target brownfield repository into isolated sandbox.
   2. Synthesized failure reproduction test (reproduce_issue.py)... <span class="term-red">FAIL (Expected)</span>
-  3. Ingested 18,400 lines of codebase into Gemini Pro (1M context window).
+  3. Ingested AST symbol graph & resolved dependency call hierarchy.
   4. AST parsing & root-cause patch generated: Fix concurrency race in event_dispatcher.ts.
   5. Running local test suite (pytest -v)...
      test_dispatcher_order ............ <span class="term-green">PASSED</span>
@@ -205,7 +205,7 @@ const COMMANDS = {
 
   stack: () => `
 <div class="term-white font-bold">🛠️ TECHNOLOGY MATRIX (lmduy2612):</div>
-  • <span class="term-cyan">AI & Agents:</span> Autonomous Multi-Agent, Gemini Pro 1M Context, 9router, Playwright
+  • <span class="term-cyan">AI & Agents:</span> Autonomous Multi-Agent, Tool Calling & ReAct Loops, Vector RAG, AST Parsing
   • <span class="term-indigo">Backend:</span>    TypeScript, NestJS, gRPC & Protocol Buffers, Python 3.12, FastAPI
   • <span class="term-yellow">Databases:</span>  PostgreSQL, Redis (Distributed Lock/Cache), Prisma ORM, MongoDB
   • <span class="term-green">Frontend:</span>   React 19, Next.js 15, Three.js (WebGL), Tailwind CSS v4
