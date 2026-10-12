@@ -51,15 +51,32 @@ case "$ACTION" in
       echo "   gh repo create $TARGET_REPO --public --description 'Personal Portfolio Landing Page for Duy Luong (lmduy2612)'"
     fi
 
-    TMP_DIR="/tmp/deploy_portfolio_$(date +%s)"
-    mkdir -p "$TMP_DIR"
-    cp -r "$SCRIPT_DIR"/* "$TMP_DIR"/
-
-    echo "✅ Toàn bộ file tĩnh (HTML, CSS, JS) đã được đóng gói tại: $TMP_DIR"
-    echo ""
-    echo "⚠️ QUY TẮC BẢO MẬT & GIT CONFIRMATION:"
-    echo "   Để đẩy trực tiếp lên GitHub Pages, vui lòng chạy lệnh xác nhận thủ công:"
-    echo "   cd $TMP_DIR && git init -b main && git add . && git commit -m 'feat: deploy elite personal portfolio landing page' && git remote add origin git@github.com:$TARGET_REPO.git && git push -u origin main --force"
+    TARGET_LOCAL="/home/duylm/Documents/tools/lmduy2612.github.io"
+    if [ -d "$TARGET_LOCAL/.git" ]; then
+      echo "🔄 Đồng bộ tệp sang kho lưu trữ cục bộ: $TARGET_LOCAL"
+      cp -r "$SCRIPT_DIR"/* "$TARGET_LOCAL"/
+      touch "$TARGET_LOCAL/.nojekyll"
+      git -C "$TARGET_LOCAL" add .
+      if git -C "$TARGET_LOCAL" diff --cached --quiet; then
+        echo "✅ Không có thay đổi nào mới cần đẩy."
+      else
+        git -C "$TARGET_LOCAL" commit -m "feat(portfolio): sync and update portfolio landing page"
+        git -C "$TARGET_LOCAL" push origin main
+        echo "🎉 Đã xuất bản thành công lên GitHub Pages!"
+      fi
+    else
+      TMP_DIR="/tmp/deploy_portfolio_$(date +%s)"
+      mkdir -p "$TMP_DIR"
+      cp -r "$SCRIPT_DIR"/* "$TMP_DIR"/
+      touch "$TMP_DIR/.nojekyll"
+      git -C "$TMP_DIR" init -b main
+      git -C "$TMP_DIR" add .
+      git -C "$TMP_DIR" commit -m "feat: deploy personal portfolio landing page"
+      git -C "$TMP_DIR" remote add origin "git@github.com:$TARGET_REPO.git"
+      git -C "$TMP_DIR" push -u origin main --force
+      rm -rf "$TMP_DIR"
+      echo "🎉 Đã xuất bản thành công lên GitHub Pages!"
+    fi
     echo ""
     echo "Hoặc xem trước trực tiếp trên máy bằng: ./scripts/trigger.sh landing serve"
     ;;
