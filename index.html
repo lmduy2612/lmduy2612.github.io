@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duy Luong (lmduy2612) | Senior AI Systems & Distributed Architecture Engineer</title>
+  <meta name="description" content="Personal Portfolio of Duy Luong (lmduy2612) - Senior AI Systems & Distributed Architecture Engineer specializing in Autonomous Multi-Agent Systems, 1M+ LLM Context, NestJS & gRPC, and TDD." />
+  <link rel="canonical" href="https://lmduy2612.github.io" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lmduy2612.github.io" />
+  <meta property="og:title" content="Duy Luong (lmduy2612) | Senior AI Systems & Distributed Architecture Engineer" />
+  <meta property="og:description" content="Personal Portfolio of Duy Luong (lmduy2612) - Senior AI Systems & Distributed Architecture Engineer specializing in Autonomous Multi-Agent Systems, 1M+ LLM Context, NestJS & gRPC, and TDD." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://lmduy2612.github.io" />
+  <meta name="twitter:title" content="Duy Luong (lmduy2612) | Senior AI Systems & Distributed Architecture Engineer" />
+  <meta name="twitter:description" content="Personal Portfolio of Duy Luong (lmduy2612) - Senior AI Systems & Distributed Architecture Engineer specializing in Autonomous Multi-Agent Systems, 1M+ LLM Context, NestJS & gRPC, and TDD." />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace'],
+          },
+          colors: {
+            space: {
+              950: '#070A11',
+              900: '#0B0F19',
+              850: '#111827',
+              800: '#1F2937',
+              700: '#374151'
+            },
+            brand: {
+              indigo: '#6366F1',
+              cyan: '#06B6D4',
+              emerald: '#10B981',
+              violet: '#8B5CF6',
+              amber: '#F59E0B'
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 3s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 15px rgba(99, 102, 241, 0.3)' },
+              '100%': { boxShadow: '0 0 35px rgba(6, 182, 212, 0.6)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-space-900 text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-indigo/30 selection:text-brand-cyan">
+
+  <!-- Neural Mesh Canvas Background -->
+  <canvas id="neural-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- Top Ambient Glow -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-brand-indigo/15 via-brand-cyan/5 to-transparent blur-3xl pointer-events-none z-0"></div>
+
+  <!-- Main Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-space-950/70 border-b border-slate-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-indigo to-brand-cyan p-[1px] shadow-lg shadow-brand-indigo/20 group-hover:shadow-brand-cyan/40 transition-all duration-300">
+          <div class="w-full h-full bg-space-900 rounded-xl flex items-center justify-center">
+            <span class="text-brand-cyan font-mono font-bold text-lg">⚡</span>
+          </div>
+        </div>
+        <div>
+          <div class="font-bold text-base tracking-tight flex items-center gap-2">
+            <span>Duy Luong</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-brand-indigo/20 text-brand-indigo border border-brand-indigo/30">lmduy2612</span>
+          </div>
+          <div class="text-[11px] text-slate-400 font-mono tracking-wider">AI SYSTEMS ARCHITECT</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#systems" class="hover:text-brand-cyan transition-colors">Architectures</a>
+        <a href="#terminal" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5">
+          <i data-lucide="terminal" class="w-4 h-4 text-brand-indigo"></i>
+          <span>Playground</span>
+        </a>
+        <a href="#projects" class="hover:text-brand-cyan transition-colors">Projects</a>
+        <a href="#tech-stack" class="hover:text-brand-cyan transition-colors">Tech Matrix</a>
+        <a href="#credibility" class="hover:text-brand-cyan transition-colors">Credibility</a>
+      </nav>
+
+      <!-- Right CTAs -->
+      <div class="flex items-center gap-3">
+        <!-- Live Status Pill -->
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-medium">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Open for High-Impact Projects</span>
+        </div>
+
+        <a href="https://github.com/lmduy2612" target="_blank" rel="noopener noreferrer" 
+           class="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-sm font-medium transition-all duration-200 hover:border-slate-500 shadow-sm">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>GitHub</span>
+        </a>
+
+        <a href="#contact" 
+           class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-brand-indigo to-indigo-600 hover:from-indigo-500 hover:to-indigo-600 text-white text-sm font-semibold shadow-lg shadow-brand-indigo/25 hover:shadow-brand-indigo/40 transition-all duration-200">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Connect</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative pt-36 pb-20 md:pt-44 md:pb-32 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-4xl">
+        <!-- Specialty Badge -->
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-800/60 border border-brand-indigo/30 backdrop-blur-md mb-8">
+          <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+          <span class="text-xs font-mono font-medium text-slate-300">
+            AUTONOMOUS AGENTS • 1M+ CONTEXT WINDOW • DISTRIBUTED SYSTEMS
+          </span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
+          Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-indigo via-brand-cyan to-indigo-300">Resilient AI Systems</span> & Distributed Architectures.
+        </h1>
+
+        <!-- Dynamic Typing Subtitle -->
+        <div class="h-10 text-lg sm:text-2xl font-mono text-brand-cyan font-semibold flex items-center gap-2 mb-8">
+          <span>&gt;</span>
+          <span id="typed-roles" class="text-slate-200">Autonomous Multi-Agent Systems</span>
+          <span class="cursor-blink text-brand-cyan">_</span>
+        </div>
+
+        <!-- Bio Paragraph -->
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-10 max-w-3xl">
+          Hi, I'm <b>Duy Luong (<a href="https://github.com/lmduy2612" class="text-brand-cyan hover:underline">@lmduy2612</a>)</b>. With over 9 years in the open-source and software engineering ecosystem (active since 2017), I architect <b>self-healing autonomous agent loops</b>, ingestion pipelines for <b>1M+ token LLMs</b>, and <b>sub-millisecond distributed backends</b> with NestJS and gRPC.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4 mb-16">
+          <a href="#terminal" class="flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-indigo to-indigo-600 hover:from-indigo-500 hover:to-indigo-600 text-white font-semibold shadow-xl shadow-brand-indigo/30 hover:shadow-brand-indigo/50 transition-all duration-200 group">
+            <i data-lucide="terminal" class="w-5 h-5 text-brand-cyan group-hover:scale-110 transition-transform"></i>
+            <span>Interactive Terminal Playground</span>
+          </a>
+
+          <a href="#projects" class="flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-space-850/80 hover:bg-space-800 border border-slate-700/80 hover:border-slate-500 text-slate-200 font-semibold transition-all duration-200">
+            <i data-lucide="layers" class="w-5 h-5 text-slate-400"></i>
+            <span>Explore Featured Systems</span>
+          </a>
+
+          <a href="https://github.com/lmduy2612" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-space-850/80 hover:bg-space-800 border border-slate-700/80 hover:border-slate-500 text-slate-200 font-semibold transition-all duration-200">
+            <i data-lucide="github" class="w-5 h-5 text-slate-400"></i>
+            <span>GitHub Profile</span>
+          </a>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-slate-800/80">
+          <div class="glass-card p-4 rounded-2xl">
+            <div class="text-3xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-indigo">9+ Years</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Open Source & Dev (2017)</div>
+          </div>
+
+          <div class="glass-card p-4 rounded-2xl">
+            <div class="text-3xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-indigo to-indigo-300">1,000,000+</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Token Context Reasoning</div>
+          </div>
+
+          <div class="glass-card p-4 rounded-2xl">
+            <div class="text-3xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-emerald to-emerald-300">100% TDD</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Verified Local Test Runner</div>
+          </div>
+
+          <div class="glass-card p-4 rounded-2xl">
+            <div class="text-3xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-indigo-400">&lt; 1 ms</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">gRPC / IPC Protocol Latency</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Core Architectural Specialties -->
+  <section id="systems" class="py-24 relative z-10 border-t border-slate-800/60 bg-space-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan font-bold mb-3">Core Disciplines</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">System Architecture & Engineering Capabilities</p>
+        <p class="text-slate-400 text-base mt-4">Focused on deep engineering, zero-fluff implementations, and rock-solid reliability.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="glass-card p-8 rounded-3xl relative overflow-hidden group hover:border-brand-indigo/50 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-brand-indigo/20 border border-brand-indigo/40 flex items-center justify-center text-brand-indigo mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Autonomous Multi-Agent Loops</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Designing orchestrators implementing the Zero-Execution pattern, spam-proof opportunity radars, and autonomous Test-Driven Development (TDD) self-healing coding agents that execute tests locally until 100% green before opening PRs.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="badge">Zero-Execution Orchestrator</span>
+            <span class="badge">TDD Feedback Loops</span>
+            <span class="badge">Spam-Proof Radar</span>
+            <span class="badge">Multi-Agent State</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card p-8 rounded-3xl relative overflow-hidden group hover:border-brand-cyan/50 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-brand-cyan/20 border border-brand-cyan/40 flex items-center justify-center text-brand-cyan mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="network" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">High-Throughput Distributed Backends</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Building resilient microservices using NestJS and gRPC Protocol Buffers for sub-millisecond inter-service communication. Deep mastery of Redis distributed caching, PostgreSQL transactional safety, and horizontal scaling.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="badge">NestJS</span>
+            <span class="badge">gRPC & Protobuf</span>
+            <span class="badge">PostgreSQL & Prisma</span>
+            <span class="badge">Redis Caching</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card p-8 rounded-3xl relative overflow-hidden group hover:border-brand-emerald/50 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-brand-emerald/20 border border-brand-emerald/40 flex items-center justify-center text-brand-emerald mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">1M+ Token LLM Systems & Gateway Routing</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Operating local reverse-proxy gateways (9router) routing across multiple Gemini tiers including Gemini 3.8 Flash. Ingestion of entire brownfield codebases in a single 1M+ token context window for deep AST parsing, semantic refactoring, and bug diagnosis.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="badge">Gemini 3.8 Flash (1M Context)</span>
+            <span class="badge">9router Gateway</span>
+            <span class="badge">AST Code Ingestion</span>
+            <span class="badge">Zero-Token-Waste</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass-card p-8 rounded-3xl relative overflow-hidden group hover:border-brand-violet/50 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-brand-violet/20 border border-brand-violet/40 flex items-center justify-center text-brand-violet mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="box" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Interactive 3D Web & Modern Frontends</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Creating responsive, high-performance web applications using React 19, Next.js, and WebGL / Three.js 3D scenes. Strict focus on 60FPS fluid interactions, micro-animations, and accessible glassmorphism design systems.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="badge">React 19 & Next.js 15</span>
+            <span class="badge">Three.js & WebGL</span>
+            <span class="badge">Tailwind CSS v4</span>
+            <span class="badge">Cypress E2E Testing</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Terminal Playground Simulator -->
+  <section id="terminal" class="py-24 relative z-10 border-t border-slate-800/60">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-brand-indigo font-bold mb-2">Live Demo</h2>
+        <p class="text-3xl font-extrabold text-white tracking-tight">Interactive Systems Playground</p>
+        <p class="text-slate-400 text-sm mt-2">Test drive the command center or click the chips below to simulate autonomous agent actions.</p>
+      </div>
+
+      <!-- Quick Command Chips -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-6 text-xs font-mono">
+        <span class="text-slate-500 mr-1">Quick Run:</span>
+        <button onclick="runCommand('status')" class="chip">status</button>
+        <button onclick="runCommand('scout')" class="chip">scout</button>
+        <button onclick="runCommand('solve-demo')" class="chip">solve-demo</button>
+        <button onclick="runCommand('stack')" class="chip">stack</button>
+        <button onclick="runCommand('contact')" class="chip">contact</button>
+        <button onclick="runCommand('clear')" class="chip bg-red-950/40 text-red-400 border-red-800/40 hover:bg-red-900/50">clear</button>
+      </div>
+
+      <!-- Terminal Window -->
+      <div class="rounded-2xl border border-slate-700/80 bg-[#0c101a] shadow-2xl overflow-hidden font-mono text-sm">
+        
+        <!-- Terminal Header Bar -->
+        <div class="px-4 py-3 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+            <span class="text-xs text-slate-400 ml-2 font-mono">lmduy2612@systems-core: ~/git-mechanic-agent</span>
+          </div>
+          <span class="text-[11px] text-slate-500">zsh • Antigravity 2.0</span>
+        </div>
+
+        <!-- Terminal Body -->
+        <div id="terminal-screen" class="p-5 h-96 overflow-y-auto space-y-2 text-slate-200 select-text leading-relaxed">
+          <div class="text-slate-400">Welcome to Duy Luong's System Terminal [v3.0.0-rc]</div>
+          <div class="text-slate-400">Type <span class="text-brand-cyan">help</span> to list available operations or click any quick chip above.</div>
+          <div class="text-brand-indigo">----------------------------------------------------------------------</div>
+        </div>
+
+        <!-- Terminal Input Line -->
+        <div class="px-5 py-3 bg-slate-950 border-t border-slate-800/80 flex items-center gap-2">
+          <span class="text-brand-cyan font-bold">➜</span>
+          <span class="text-brand-indigo font-bold">~/orchestrator</span>
+          <span class="text-slate-400">$</span>
+          <input id="terminal-input" type="text" placeholder="Type a command (e.g. status, scout, stack, contact)..." 
+                 class="flex-1 bg-transparent border-none outline-none text-slate-100 placeholder-slate-600 font-mono text-sm focus:ring-0" 
+                 autocomplete="off" spellcheck="false" />
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Featured Projects Showcase -->
+  <section id="projects" class="py-24 relative z-10 border-t border-slate-800/60 bg-space-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-brand-emerald font-bold mb-3">Open Source & Systems</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Featured Engineering Highlights</p>
+        <p class="text-slate-400 text-base mt-4">Production-grade architectures, open-source repositories, and verified implementations.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Project 1 -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between group hover:border-brand-indigo/50 transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-brand-indigo/20 text-brand-indigo border border-brand-indigo/30">AI Autonomous Engine</span>
+              <a href="https://github.com/lmduy2612" target="_blank" class="text-slate-400 hover:text-brand-cyan transition-colors">
+                <i data-lucide="external-link" class="w-5 h-5"></i>
+              </a>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-brand-cyan transition-colors">Autonomous Bounty Engine</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Self-directed multi-agent loop featuring 4-stage spam filters, 1M+ context LLM code reasoning via 9router gateway, and local TDD runner. Discovers issues, replicates failures in local sandbox, and verifies tests 100% green before automated PR submission.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono mb-6">
+              <span class="badge">Python 3.12</span>
+              <span class="badge">9router Gateway</span>
+              <span class="badge">Gemini Pro 1M</span>
+              <span class="badge">Pytest TDD</span>
+              <span class="badge">GitHub CLI</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-emerald-400 font-mono flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>Production Verified</span>
+            </span>
+            <a href="https://github.com/lmduy2612" target="_blank" class="text-xs font-bold text-brand-cyan hover:underline flex items-center gap-1">
+              <span>Inspect Architecture</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between group hover:border-brand-cyan/50 transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/30">Distributed Microservices</span>
+              <a href="https://github.com/lmduy2612/nestjs-grpc" target="_blank" class="text-slate-400 hover:text-brand-cyan transition-colors">
+                <i data-lucide="external-link" class="w-5 h-5"></i>
+              </a>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-brand-cyan transition-colors">nestjs-grpc Microservice</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              High-throughput distributed microservice architecture utilizing Protocol Buffers (Protobuf) for sub-millisecond inter-process RPC communication. Strict contract validation, streaming channels, and clean decoupled services.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono mb-6">
+              <span class="badge">TypeScript</span>
+              <span class="badge">NestJS</span>
+              <span class="badge">gRPC & Protobuf</span>
+              <span class="badge">Microservices</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">Public Repository</span>
+            <a href="https://github.com/lmduy2612/nestjs-grpc" target="_blank" class="text-xs font-bold text-brand-cyan hover:underline flex items-center gap-1">
+              <span>View Source on GitHub</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between group hover:border-brand-emerald/50 transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-brand-emerald/20 text-brand-emerald border border-brand-emerald/30">3D WebGL Engine</span>
+              <a href="https://github.com/lmduy2612/threejs" target="_blank" class="text-slate-400 hover:text-brand-cyan transition-colors">
+                <i data-lucide="external-link" class="w-5 h-5"></i>
+              </a>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-brand-cyan transition-colors">Three.js Interactive Engine</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Interactive 3D graphics rendering, custom shaders, and real-time WebGL scene management in modern browser environments. Optimized geometry buffers and low memory footprint.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono mb-6">
+              <span class="badge">JavaScript</span>
+              <span class="badge">WebGL</span>
+              <span class="badge">Three.js</span>
+              <span class="badge">Shader Art</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">Public Repository</span>
+            <a href="https://github.com/lmduy2612/threejs" target="_blank" class="text-xs font-bold text-brand-cyan hover:underline flex items-center gap-1">
+              <span>View Source on GitHub</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between group hover:border-brand-violet/50 transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-brand-violet/20 text-brand-violet border border-brand-violet/30">Test Automation</span>
+              <a href="https://github.com/lmduy2612/cypress-e2e" target="_blank" class="text-slate-400 hover:text-brand-cyan transition-colors">
+                <i data-lucide="external-link" class="w-5 h-5"></i>
+              </a>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-brand-cyan transition-colors">Cypress E2E Testing Harness</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              End-to-end automated testing harness ensuring zero regression across complex user journeys, state synchronizations, and CI/CD validation gates.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono mb-6">
+              <span class="badge">JavaScript</span>
+              <span class="badge">Cypress</span>
+              <span class="badge">CI/CD Pipeline</span>
+              <span class="badge">Regression Prevention</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">Public Repository</span>
+            <a href="https://github.com/lmduy2612/cypress-e2e" target="_blank" class="text-xs font-bold text-brand-cyan hover:underline flex items-center gap-1">
+              <span>View Source on GitHub</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Comprehensive Tech Stack Matrix -->
+  <section id="tech-stack" class="py-24 relative z-10 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan font-bold mb-3">Core Toolkit</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Technology & Architecture Matrix</p>
+        <p class="text-slate-400 text-base mt-4">Tools selected for correctness, execution speed, and long-term endurance.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Category 1 -->
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
+            <i data-lucide="bot" class="w-5 h-5 text-brand-cyan"></i>
+            <h4 class="font-bold text-white text-base">AI & Autonomous Agents</h4>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-300 font-mono">
+            <li class="flex items-center justify-between"><span>Gemini 3.8 Flash (1M)</span><span class="text-xs text-brand-cyan">Expert</span></li>
+            <li class="flex items-center justify-between"><span>9router Gateway</span><span class="text-xs text-brand-cyan">Core</span></li>
+            <li class="flex items-center justify-between"><span>TDD Agent Feedback Loops</span><span class="text-xs text-brand-cyan">Advanced</span></li>
+            <li class="flex items-center justify-between"><span>Playwright & Browser Autom.</span><span class="text-xs text-brand-cyan">Expert</span></li>
+            <li class="flex items-center justify-between"><span>OpenAI API / Vector Stores</span><span class="text-xs text-brand-cyan">Advanced</span></li>
+          </ul>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
+            <i data-lucide="server" class="w-5 h-5 text-brand-indigo"></i>
+            <h4 class="font-bold text-white text-base">Backend & Distributed</h4>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-300 font-mono">
+            <li class="flex items-center justify-between"><span>TypeScript & Node.js</span><span class="text-xs text-brand-indigo">Expert</span></li>
+            <li class="flex items-center justify-between"><span>NestJS Framework</span><span class="text-xs text-brand-indigo">Expert</span></li>
+            <li class="flex items-center justify-between"><span>gRPC & Protocol Buffers</span><span class="text-xs text-brand-indigo">Advanced</span></li>
+            <li class="flex items-center justify-between"><span>Python 3.12 & FastAPI</span><span class="text-xs text-brand-indigo">Advanced</span></li>
+            <li class="flex items-center justify-between"><span>PostgreSQL & Prisma ORM</span><span class="text-xs text-brand-indigo">Expert</span></li>
+            <li class="flex items-center justify-between"><span>Redis Distributed Cache</span><span class="text-xs text-brand-indigo">Advanced</span></li>
+          </ul>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
+            <i data-lucide="shield-check" class="w-5 h-5 text-brand-emerald"></i>
+            <h4 class="font-bold text-white text-base">Frontend, 3D & Quality</h4>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-300 font-mono">
+            <li class="flex items-center justify-between"><span>React 19 & Next.js 15</span><span class="text-xs text-brand-emerald">Expert</span></li>
+            <li class="flex items-center justify-between"><span>Three.js & WebGL 3D</span><span class="text-xs text-brand-emerald">Advanced</span></li>
+            <li class="flex items-center justify-between"><span>Tailwind CSS v4</span><span class="text-xs text-brand-emerald">Expert</span></li>
+            <li class="flex items-center justify-between"><span>Pytest & Jest / Vitest</span><span class="text-xs text-brand-emerald">Expert</span></li>
+            <li class="flex items-center justify-between"><span>Cypress E2E Automation</span><span class="text-xs text-brand-emerald">Expert</span></li>
+            <li class="flex items-center justify-between"><span>Docker & CI/CD Actions</span><span class="text-xs text-brand-emerald">Advanced</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Credibility & GitHub Analytics Section -->
+  <section id="credibility" class="py-24 relative z-10 border-t border-slate-800/60 bg-space-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan font-bold mb-3">Track Record</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Open Source Credibility & Philosophy</p>
+      </div>
+
+      <!-- Philosophy Quote Box -->
+      <div class="max-w-4xl mx-auto mb-16 p-8 rounded-3xl bg-gradient-to-r from-brand-indigo/10 via-space-850 to-brand-cyan/10 border border-slate-700/80 shadow-2xl relative">
+        <span class="text-5xl font-serif text-brand-indigo/40 absolute top-4 left-6">“</span>
+        <blockquote class="text-slate-200 text-lg sm:text-xl italic font-serif leading-relaxed pl-8 pr-4">
+          Code is written once, but read, audited, and maintained thousands of times. I engineer systems designed to be understood, rigorously tested, and built for long-term endurance.
+        </blockquote>
+        <div class="mt-4 text-right text-xs font-mono text-slate-400">
+          — Duy Luong, <span class="text-brand-cyan">@lmduy2612</span>
+        </div>
+      </div>
+
+      <!-- Live GitHub Stats Visuals -->
+      <div class="flex flex-wrap items-center justify-center gap-6">
+        <div class="glass-card p-4 rounded-2xl overflow-hidden shadow-xl">
+          <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=lmduy2612&theme=tokyonight" alt="GitHub Stats for lmduy2612" class="max-w-full h-auto" />
+        </div>
+        <div class="glass-card p-4 rounded-2xl overflow-hidden shadow-xl">
+          <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=lmduy2612&theme=tokyonight" alt="Top Languages for lmduy2612" class="max-w-full h-auto" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact & Collaboration Section -->
+  <section id="contact" class="py-24 relative z-10 border-t border-slate-800/60">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <div class="w-16 h-16 rounded-3xl bg-brand-indigo/20 border border-brand-indigo/40 flex items-center justify-center text-brand-indigo mx-auto mb-8 animate-pulse-slow">
+        <i data-lucide="sparkles" class="w-8 h-8 text-brand-cyan"></i>
+      </div>
+
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
+        Let's Build Resilient Systems Together.
+      </h2>
+
+      <p class="text-slate-300 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+        Whether you are designing autonomous agent loops, architecting high-throughput distributed microservices, or seeking technical partnership for high-impact open-source initiatives:
+      </p>
+
+      <!-- Contact Options Box -->
+      <div class="glass-card p-8 rounded-3xl max-w-xl mx-auto mb-10 text-left space-y-4">
+        <div class="flex items-center justify-between p-3.5 rounded-xl bg-space-900 border border-slate-800">
+          <div class="flex items-center gap-3">
+            <i data-lucide="github" class="w-5 h-5 text-brand-cyan"></i>
+            <div>
+              <div class="text-xs text-slate-400 font-mono">GitHub Profile</div>
+              <div class="text-sm font-semibold text-white">github.com/lmduy2612</div>
+            </div>
+          </div>
+          <a href="https://github.com/lmduy2612" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono font-medium text-slate-200 transition-colors">
+            Visit ↗
+          </a>
+        </div>
+
+        <div class="flex items-center justify-between p-3.5 rounded-xl bg-space-900 border border-slate-800">
+          <div class="flex items-center gap-3">
+            <i data-lucide="mail" class="w-5 h-5 text-brand-indigo"></i>
+            <div>
+              <div class="text-xs text-slate-400 font-mono">Direct Communication</div>
+              <div class="text-sm font-semibold text-white">lmduy2612@gmail.com</div>
+            </div>
+          </div>
+          <button onclick="copyToClipboard('lmduy2612@gmail.com', this)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono font-medium text-slate-200 transition-colors">
+            Copy
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between p-3.5 rounded-xl bg-space-900 border border-slate-800">
+          <div class="flex items-center gap-3">
+            <i data-lucide="map-pin" class="w-5 h-5 text-brand-emerald"></i>
+            <div>
+              <div class="text-xs text-slate-400 font-mono">Location & Availability</div>
+              <div class="text-sm font-semibold text-white">Vietnam 🇻🇳 • Global Remote Collaboration</div>
+            </div>
+          </div>
+          <span class="text-xs font-mono text-emerald-400 font-medium">Active</span>
+        </div>
+
+        <!-- Binance Pay Sponsor Option -->
+        <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-left">
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <img src="assets/images/binance-qr.png" alt="Binance Pay QR Code" class="w-28 h-auto rounded-xl shadow-lg border border-amber-500/30 bg-black/40" />
+            <div class="space-y-1 text-left">
+              <div class="flex items-center gap-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">Sponsor via Binance Pay</span>
+              </div>
+              <div class="text-sm font-semibold text-white">Binance ID: <code class="font-mono text-amber-300 font-bold">524179009</code></div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Scan with Binance App to sponsor open-source engineering, model computation, and autonomous agent systems.
+              </p>
+              <button onclick="copyToClipboard('524179009', this)" class="mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-xs font-mono font-medium text-amber-300 border border-amber-500/40 transition-colors">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Binance ID
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-slate-800/80 bg-space-950 text-slate-400 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span>© 2026 Duy Luong (<a href="https://github.com/lmduy2612" class="text-slate-300 hover:underline">@lmduy2612</a>). All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span>Curated by <b class="text-brand-indigo">agent-profile</b> in <code>04-Profile-Branding</code></span>
+        <span>•</span>
+        <a href="#hero" class="text-brand-cyan hover:underline">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

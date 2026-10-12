@@ -1,0 +1,101 @@
+/* ==============================================================================
+   Cyber Dark Glassmorphism Styling for Duy Luong's Personal Portfolio
+   ============================================================================== */
+
+@layer utilities {
+  .glass-card {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    background-color: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    color: #94a3b8;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+  }
+
+  .badge:hover {
+    border-color: #6366f1;
+    color: #e2e8f0;
+  }
+
+  .chip {
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.5rem;
+    background-color: rgba(30, 41, 59, 0.9);
+    border: 1px solid rgba(71, 85, 105, 0.6);
+    color: #cbd5e1;
+    font-family: "Fira Code", monospace;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .chip:hover {
+    background-color: rgba(99, 102, 241, 0.2);
+    border-color: #6366f1;
+    color: #38bdf8;
+    transform: translateY(-1px);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070a11;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Terminal Screen Scrollbar */
+#terminal-screen::-webkit-scrollbar {
+  width: 6px;
+}
+
+#terminal-screen::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#terminal-screen::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+
+/* Blinking Cursor */
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Terminal Text Colors */
+.term-cyan { color: #06b6d4; }
+.term-indigo { color: #818cf8; }
+.term-green { color: #34d399; }
+.term-yellow { color: #fbbf24; }
+.term-red { color: #f87171; }
+.term-gray { color: #64748b; }
+.term-white { color: #f8fafc; }
