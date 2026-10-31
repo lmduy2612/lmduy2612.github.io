@@ -199,8 +199,7 @@ const COMMANDS = {
 <div class="term-white font-bold">🌐 [AGENT-BUILT ECOSYSTEMS] Live Production Platforms:</div>
   1. <a href="https://jobnexus.io.vn" target="_blank" class="term-cyan underline">jobnexus.io.vn</a>    ➜ Flagship AI recruitment platform (278+ PRs • 15,600+ active jobs across 23+ boards)
   2. <a href="https://hiredemand.io.vn" target="_blank" class="term-indigo underline">hiredemand.io.vn</a>  ➜ Recruitment market &amp; compensation demand intelligence dashboard
-  3. <a href="https://san-deal.io.vn" target="_blank" class="term-green underline">san-deal.io.vn</a>    ➜ Automated deal harvester &amp; affiliate commerce intelligence engine
-  4. <span class="term-yellow">git-mechanic</span>      ➜ Autonomous open-source bounty solver (51+ merged external PRs)
+  3. <span class="term-yellow">git-mechanic</span>      ➜ Autonomous open-source bounty solver (51+ merged external PRs)
 `,
 
   bounty: () => `
@@ -223,7 +222,6 @@ const COMMANDS = {
 <div class="term-white font-bold">📫 DIRECT COORDINATES &amp; LIVE PLATFORMS:</div>
   • Flagship : <a href="https://jobnexus.io.vn" target="_blank" class="term-cyan underline">https://jobnexus.io.vn</a>
   • Analytics: <a href="https://hiredemand.io.vn" target="_blank" class="term-cyan underline">https://hiredemand.io.vn</a>
-  • Commerce : <a href="https://san-deal.io.vn" target="_blank" class="term-cyan underline">https://san-deal.io.vn</a>
   • GitHub   : <a href="https://github.com/lmduy2612" target="_blank" class="term-indigo underline">github.com/lmduy2612</a>
   • Email    : <span class="term-green">lmduy2612@gmail.com</span>
 `,
